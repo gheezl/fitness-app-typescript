@@ -3,9 +3,13 @@ import { Bars3Icon } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../assets/Logo.png"
 
-type Props = {};
+import Link from "@/components/Link/Link";
 
-const NavBar = (props: Props) => {
+import { SelectedPage } from "@/enums/enums";
+
+const NavBar = (props: {}) => {
+    const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
+
     const flexBetween = "flex items-center justify-between";
 
     return (
@@ -16,10 +20,26 @@ const NavBar = (props: Props) => {
                         <img alt="logo" src={Logo} />
                         <div className={flexBetween + "w-full"}>
                             <div className={flexBetween + "gap-8 text-sm"}>
-                                <p>Home</p>
-                                <p>Beneftis</p>
-                                <p>Our Classes</p>
-                                <p>Contact</p>
+                                <Link
+                                    page="Home"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                />
+                                <Link
+                                    page="Benefits"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                />
+                                <Link
+                                    page="Our Classes"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                />
+                                <Link
+                                    page="Contact"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                />
                             </div>
                             <div className={flexBetween + "gap-8"}>
                                 <p>Sign In</p>

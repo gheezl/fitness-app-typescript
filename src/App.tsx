@@ -1,4 +1,4 @@
-import NavBar from "./scenes/navbar"
+import NavBar from "./scenes/NavBar"
 
 const App = () => {
   return (
